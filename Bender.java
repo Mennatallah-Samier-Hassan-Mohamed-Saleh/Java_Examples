@@ -4,12 +4,12 @@
  * This class is an example of a Bender
  */
 public abstract class Bender {
-    private String name;
-    private int strengthLevel;
-    private int health;
+    protected String name;
+    protected int strengthLevel;
+    protected int health;
 
     /**
-     * This is a constructor that takes in 3 Strings
+     * This is a constructor that takes in 3 parameters
      * @param name first variable
      * @param strengthLevel second variable
      * @param health third variable
@@ -85,7 +85,7 @@ public abstract class Bender {
             return false;
         }
         Bender doggy = (Bender) o;
-        return ((doggy.name.equals(name)) && (doggy.strengthLevel == strengthLevel) && (doggy.health == health));
+        return ((doggy.getName().equals(name)) && (doggy.getStrengthLevel() == strengthLevel) && (doggy.getHealth() == health));
     }
 
     /**
