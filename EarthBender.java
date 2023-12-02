@@ -1,3 +1,4 @@
+// I worked on the assignment alone, using only course-provided materials.
 /**
  * @author Mennatallah Saleh
  * @version 1.0
@@ -5,7 +6,7 @@
  */
 public class EarthBender extends Bender {
     private boolean earthArmor;
-    private int earthPoints;
+    private static int earthPoints;
 
     public static final int DEFAULT_STRENGTHLEVEL = 40;
     public static final int DEFAULT_HEALTH = 100;
@@ -34,15 +35,15 @@ public class EarthBender extends Bender {
     /**
      * @return int
      */
-    public int getEarthPoints() {
-        return this.earthPoints;
+    public static int getEarthPoints() {
+        return earthPoints;
     }
 
     /**
-     * @param earthPoints earthPoints
+     * @param newEarthPoints newEarthPoints
      */
-    public void setEarthPoints(int earthPoints) {
-        this.earthPoints = earthPoints;
+    public static void setEarthPoints(int newEarthPoints) {
+        earthPoints = newEarthPoints;
     }
 
     /**
@@ -79,7 +80,7 @@ public class EarthBender extends Bender {
             } else {
                 b.setHealth(newHealth);
                 if (newHealth < 20) {
-                    this.earthPoints = b.getStrengthLevel();
+                    earthPoints = b.getStrengthLevel();
                 }
             }
         }
@@ -87,7 +88,7 @@ public class EarthBender extends Bender {
     }
 
     /**
-     * 
+     *
      */
     public void buildArmor() {
         this.setEarthArmor(true);

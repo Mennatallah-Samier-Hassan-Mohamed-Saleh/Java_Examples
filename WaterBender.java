@@ -1,3 +1,4 @@
+// I worked on the assignment alone, using only course-provided materials.
 /**
  * @author Mennatallah Saleh
  * @version 1.0
@@ -5,7 +6,7 @@
  */
 public class WaterBender extends Bender {
     private boolean healer;
-    private int waterPoints;
+    private static int waterPoints;
 
     public static final int DEFAULT_STRENGTHLEVEL = 40;
     public static final int DEFAULT_HEALTH = 80;
@@ -34,15 +35,15 @@ public class WaterBender extends Bender {
     /**
      * @return int
      */
-    public int getWaterPoints() {
-        return this.waterPoints;
+    public static int getWaterPoints() {
+        return waterPoints;
     }
 
     /**
-     * @param waterPoints waterPoints
+     * @param newWaterPoints newWaterPoints
      */
-    public void setWaterPoints(int waterPoints) {
-        this.waterPoints = waterPoints;
+    public static void setWaterPoints(int newWaterPoints) {
+        waterPoints = newWaterPoints;
     }
 
     /**
@@ -72,7 +73,7 @@ public class WaterBender extends Bender {
             } else {
                 b.setHealth(newHealth);
                 if (newHealth < 20) {
-                    this.waterPoints = b.getStrengthLevel();
+                    waterPoints = b.getStrengthLevel();
                 }
             }
         }

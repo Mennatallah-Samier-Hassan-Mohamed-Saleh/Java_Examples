@@ -1,10 +1,11 @@
+// I worked on the assignment alone, using only course-provided materials.
 /**
  * @author Mennatallah Saleh
  * @version 1.0
  * This class is an example of a Fire Bender
  */
 public class FireBender extends Bender {
-    private int firePoints;
+    private static int firePoints;
     public static final int DEFAULT_STRENGTHLEVEL = 60;
     public static final int DEFAULT_HEALTH = 50;
 
@@ -29,15 +30,15 @@ public class FireBender extends Bender {
     /**
      * @return int
      */
-    public int getFirePoints() {
-        return this.firePoints;
+    public static int getFirePoints() {
+        return firePoints;
     }
 
     /**
-     * @param firePoints firePoints
+     * @param newFirePoints newFirePoints
      */
-    public void setFirePoints(int firePoints) {
-        this.firePoints = firePoints;
+    public static void setFirePoints(int newFirePoints) {
+        firePoints = newFirePoints;
     }
 
     /**
@@ -53,7 +54,7 @@ public class FireBender extends Bender {
             } else {
                 b.setHealth(newHealth);
                 if (newHealth < 20) {
-                    this.firePoints = b.getStrengthLevel();
+                    firePoints = b.getStrengthLevel();
                 }
             }
         }
@@ -71,7 +72,7 @@ public class FireBender extends Bender {
                 i.setHealth(0);
             } else {
                 i.setHealth(newHealth);
-                this.firePoints += 5;
+                firePoints += 5;
             }
         }
 

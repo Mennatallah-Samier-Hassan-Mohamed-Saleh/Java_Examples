@@ -1,3 +1,4 @@
+// I worked on the assignment alone, using only course-provided materials.
 /**
  * @author Mennatallah Saleh
  * @version 1.0
@@ -85,7 +86,8 @@ public abstract class Bender {
             return false;
         }
         Bender doggy = (Bender) o;
-        return ((doggy.getName().equals(name)) && (doggy.getStrengthLevel() == strengthLevel) && (doggy.getHealth() == health));
+        return ((doggy.getName().equals(name))
+            && (doggy.getStrengthLevel() == strengthLevel) && (doggy.getHealth() == health));
     }
 
     /**
