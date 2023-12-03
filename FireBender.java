@@ -51,10 +51,11 @@ public class FireBender extends Bender {
             if (newHealth <= 0) {
                 b.setHealth(0);
                 b.setStrengthLevel(0);
+                firePoints += b.getStrengthLevel();
             } else {
                 b.setHealth(newHealth);
                 if (newHealth < 20) {
-                    firePoints = b.getStrengthLevel();
+                    firePoints += b.getStrengthLevel();
                 }
             }
         }

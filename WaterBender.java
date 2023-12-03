@@ -70,6 +70,7 @@ public class WaterBender extends Bender {
             if (newHealth <= 0) {
                 b.setHealth(0);
                 b.setStrengthLevel(0);
+                waterPoints += b.getStrengthLevel();
             } else {
                 b.setHealth(newHealth);
                 if (newHealth < 20) {

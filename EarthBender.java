@@ -77,6 +77,7 @@ public class EarthBender extends Bender {
             if (newHealth <= 0) {
                 b.setHealth(0);
                 b.setStrengthLevel(0);
+                earthPoints += b.getStrengthLevel();
             } else {
                 b.setHealth(newHealth);
                 if (newHealth < 20) {
