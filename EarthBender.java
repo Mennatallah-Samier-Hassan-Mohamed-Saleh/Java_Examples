@@ -74,13 +74,13 @@ public class EarthBender extends Bender {
                 newHealth -= 20;
                 this.earthArmor = false;
             }
-            if (newHealth < 0) {
+            if (newHealth <= 0) {
                 b.setHealth(0);
                 b.setStrengthLevel(0);
             } else {
                 b.setHealth(newHealth);
                 if (newHealth < 20) {
-                    earthPoints = b.getStrengthLevel();
+                    earthPoints += b.getStrengthLevel();
                 }
             }
         }

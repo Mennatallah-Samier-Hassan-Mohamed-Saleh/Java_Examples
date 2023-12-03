@@ -48,7 +48,7 @@ public class FireBender extends Bender {
         if (this.health > 5) {
             int initHealth = b.getHealth();
             int newHealth = initHealth - this.strengthLevel;
-            if (newHealth < 0) {
+            if (newHealth <= 0) {
                 b.setHealth(0);
                 b.setStrengthLevel(0);
             } else {
