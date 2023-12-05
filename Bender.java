@@ -67,7 +67,7 @@ public abstract class Bender {
      * @param i value to be added to health
      */
     public void recover(int i) {
-        if ((this.health != 0)) {
+        if (this.health > 0) {
             this.health += i;
         }
     }

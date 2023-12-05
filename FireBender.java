@@ -71,6 +71,7 @@ public class FireBender extends Bender {
             int newHealth = initHealth - 10;
             if (newHealth < 0) {
                 i.setHealth(0);
+                firePoints += 5;
             } else {
                 i.setHealth(newHealth);
                 firePoints += 5;
