@@ -1,4 +1,4 @@
-public class Wolf extends Canine implements Groomable {
+public class Wolf extends Canine{
    protected int rank;
 
    public Wolf(double size, int rank) {
