@@ -24,7 +24,7 @@ public class AttendanceTaker {
         this(new File(inputFileName), new File(outputFileName));
     }
 
-    public void takeAttendance() throws FileNotFoundException {
+    public void takeAttendance() throws FileNotFoundException{
         Scanner filScan = null;
         String line = null;
         String[] tokens = null;
@@ -108,6 +108,7 @@ public class AttendanceTaker {
     }
 
     private void processStudentAttendance(String name, Scanner consoleScanner, PrintWriter printWriter) {
+        boolean flag = false;
         try {
             if (!(name.equals(name.toUpperCase()))) {
                 throw new InvalidNameFormatException("The name isn't uppercase only");
@@ -115,16 +116,45 @@ public class AttendanceTaker {
             else{
                 for (int i = 0; i < name.length(); i++) {
                     if (Character.isDigit(name.charAt(i))) {
-                        throw new InvalidNameFormatException("The name has\n" + //
-                                "a digit");
+                        throw new InvalidNameFormatException("The name has a digit");
                     }
+                    else if ((name.charAt(i)) == '|') {
+                        throw new InvalidNameFormatException("The name has a pipe character");
+                    }
+                   else{
+
+                        flag = true;
+                   }
                 }
+            }
+            if (flag) {
+                System.out.println(name);
+                String input = consoleScanner.nextLine();
+                if (input.equals("")) {
+                    throw new InvalidAttendanceInformationException ("Attendance information missing");
+
+                } else if(!(input.equals("A") || (input.equals("B")) )){
+                    throw new InvalidAttendanceInformationException ("Attendance information is not P or A”");
+                }
+                else{
+                    printWriter.println(input);
+                }
+
             }
 
         } catch (InvalidNameFormatException e) {
-            System.out.println("The name isn't uppercase only");
-        } 
+            System.out.println("Skipping "+ name +" because of an invalid name format:"
+                +e.getMessage());
+        } catch (InvalidAttendanceInformationException m){
+            m.getMessage();
 
+        }
+
+    }
+
+    public static void main(String[] args){
+        AttendanceTaker taker = new AttendanceTaker (args[0],args[1]);
+        taker.takeAttendance();
     }
 
 }

@@ -5,5 +5,8 @@
  *          This class is an example of a Dog
  */
 public class InvalidAttendanceInformationException extends Exception{
+    public InvalidAttendanceInformationException(String message){
+        super(message);
+    }
     
 }
