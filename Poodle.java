@@ -1,4 +1,4 @@
-public class Poodle extends Dog1 {
+public class Poodle extends Dog1 implements Groomable{
     private String favoriteShampoo;
     private String favoriteConditioner;
 
