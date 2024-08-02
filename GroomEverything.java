@@ -1,14 +1,14 @@
 public class GroomEverything {
     public static void main(String[] args) {
-        Groomable[] groomer = {
+        Canine[] groomer = {
                 new Wolf(17.01, 3),
-                new Wolf(16, 5),
-                new Car("Yuhina", "Spark",2037)
+                new Poodle("riche", 99, "Lux brand","rich brand"),
+                //new Car("Yuhina", "Spark",2037)
         };
 
-        for (Groomable g : groomer) {  //groom everything
+        for (Canine g : groomer) {  //groom everything
             g.groom();
-            g.pay();
+            //g.pay();
         }
     }
 }
